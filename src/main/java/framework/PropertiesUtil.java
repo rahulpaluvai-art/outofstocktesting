@@ -148,16 +148,10 @@ public class PropertiesUtil {
         return PathUtils.decodePassword(getProperty(getEnvironment(),"DatabasePassword"));
     }
 
-    public String getMicroGatewayBaseURL()
+    public String getPDPEndPoint()
     {
-        return getProperty(getEnvironment(),"MicroGatewayBaseURL");
+        return getProperty(getEnvironment(),"PDPEndPoint");
     }
-
-    public String getGadaiCollectionInquiry()
-    {
-        return getProperty(getEnvironment(),"GadaiCollectionInquiry");
-    }
-
     public String getCaptureScreenshot()
     {
         return getProperty("CaptureScreenshots");

@@ -15,39 +15,38 @@ import lombok.experimental.FieldDefaults;
 public class PLPRequest
 {
     @JsonProperty("query")
-    final String query;
+    String query;
 
     @JsonProperty("filters")
-    final Filters filters;
+    Filters filters;
 
     @JsonProperty("numericFilters")
-    final List<Object> numericFilters;
+    List<Object> numericFilters;
 
     @JsonProperty("pageOffset")
-    final Integer pageOffset;
+    Integer pageOffset;
 
     @JsonProperty("pageSize")
-    final Integer pageSize;
+    Integer pageSize;
 
     @JsonProperty("storeId")
-    final Integer storeId;
+    Integer storeId;
 
     @JsonProperty("collectionData")
-    final Boolean collectionData;
+    Boolean collectionData;
 
     @JsonProperty("code")
-    final Integer code;
+    Integer code;
 
     @JsonProperty("contextRuleId")
-    final String contextRuleId;
+    String contextRuleId;
 
     @JsonProperty("categoryLevel")
-    final Integer categoryLevel;
+    Integer categoryLevel;
 
     @Data
     @NoArgsConstructor
-    @AllArgsConstructor
     @FieldDefaults(level = AccessLevel.PRIVATE)
-    public class Filters {
+    public static class Filters {
     }
 }

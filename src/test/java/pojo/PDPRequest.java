@@ -1,7 +1,6 @@
 package pojo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,12 +12,9 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PDPRequest {
-    @JsonProperty("skus")
-    final List<String> skus;
+    @JsonProperty("productId")
+    Long productId;
 
     @JsonProperty("storeId")
-    final Integer storeId;
-
-    @JsonProperty("cityId")
-    final Integer cityId;
+    Integer storeId;
 }
