@@ -2,7 +2,9 @@ package framework;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
@@ -10,24 +12,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class TestUtil {
 
-    private WebDriver driver;
-    private ExcelUtils excelUtils;
-    private SeleniumUtils seleniumUtils;
-    private JSFunctions jsFunctions;
-    private PropertiesUtil propertiesUtil;
-    private ElementUtils elementUtils;
-    private Reports reports;
-    private ExtentReports extentReports;
-    private ExtentTest extentTest;
-    private String scenarioName;
-    private Actions actions;
-    private String currentStep;
-    private SQLActions sqlActions;
+     WebDriver driver;
+     ExcelUtils excelUtils;
+     SeleniumUtils seleniumUtils;
+     JSFunctions jsFunctions;
+     PropertiesUtil propertiesUtil;
+     ElementUtils elementUtils;
+     Reports reports;
+     ExtentReports extentReports;
+     ExtentTest extentTest;
+     String scenarioName;
+     Actions actions;
+     String currentStep;
+     SQLActions sqlActions;
+     WaitManager waitManager;
+    
 
-    private Map<String,String> testData=new HashMap<>();
-    private Map<String,Integer> tracker=new HashMap<>();
+     Map<String,String> testData=new HashMap<>();
+     Map<String,Integer> tracker=new HashMap<>();
 
     public void setData(String key,String value)
     {
@@ -48,4 +53,6 @@ public class TestUtil {
     {
         return tracker.getOrDefault(key,-1);
     }
+
+
 }

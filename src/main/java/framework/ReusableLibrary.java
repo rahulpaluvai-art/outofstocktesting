@@ -17,6 +17,7 @@ public class ReusableLibrary {
     protected Reports reports=testUtil.getReports();
     protected ExtentReports extentReports=testUtil.getExtentReports();
     protected SQLActions sqlActions=testUtil.getSqlActions();
+    protected WaitManager waitManager=testUtil.getWaitManager();
 
 
 }
