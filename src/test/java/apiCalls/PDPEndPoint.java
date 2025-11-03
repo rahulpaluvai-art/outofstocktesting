@@ -48,6 +48,6 @@ public class PDPEndPoint { //extends ReusableLibrary {
     }
 
     public static void main(String[] args) {
-        new PDPEndPoint().performAPICallForGivenSkuID("7011394606");
+        new PDPEndPoint().performAPICallForGivenSkuID("7022253303");
     }
 }
