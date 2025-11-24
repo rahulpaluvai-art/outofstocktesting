@@ -76,6 +76,15 @@ public class ElementUtils {
 
         }
 
+        catch (InvalidSelectorException e1)
+        {
+            if(labelName.length>0)
+                throw new GenericExceptions("Xpath syntax is wrong for the given locator: " + labelName[0]);
+            else
+                throw new GenericExceptions("Xpath syntax is wrong for the given locator");
+
+        }
+
         catch (TimeoutException e2)
         {
             if(labelName.length>0)

@@ -8,14 +8,14 @@ import org.openqa.selenium.By;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PLPPages extends ReusableLibrary {
 
-    By lnk_Products= By.xpath("//div[text()='ITEMS FOUND']/following::a[@title]");
+    By lnk_Products= By.xpath("//span[text()='Sort By']/following::a[@title]");
 
     /************************************************************************************************************************/
 
-    public PLPPages clickOnFirstProduct()
+    public PDPPage clickOnFirstProduct()
     {
         seleniumUtils.clickOn(lnk_Products,"Products");
-        return this;
+        return new PDPPage();
     }
 
 

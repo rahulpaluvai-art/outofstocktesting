@@ -7,9 +7,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 
 @CucumberOptions(
-        features = "./src/test/resources/features/Krasida/KrasidaCases.feature",
+        features = "./src/test/resources/features/",
         glue = "stepDefs",
-        tags = "@TC:_Krasida_8_to_15 or @TC:_Krasida_16_To_22",
+        tags = "@OutOfStock",
         monochrome = true,
         plugin = {"pretty", "html: CucumberHTMLReport.html","json: CucumberJSONReport.json","junit: CucumberJSONReport.xml"},
         publish = true,

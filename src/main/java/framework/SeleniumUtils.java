@@ -121,7 +121,8 @@ public class SeleniumUtils {
         WebElement element = elementUtils.findElement(by,labelName);
         Optional.ofNullable(element).orElseThrow(() -> new GenericExceptions("Unable to find the element for " + labelName));
 
-        return Optional.ofNullable(element.getDomAttribute("value")).orElseGet(()->element.getDomProperty("value"));
+        String data=Optional.ofNullable(element.getDomAttribute("value")).orElseGet(()->element.getDomProperty("value"));
+        return Optional.ofNullable(data).orElseGet(() -> "");
     }
 
     public SeleniumUtils sendKeys(By by, Keys keys)
@@ -137,8 +138,11 @@ public class SeleniumUtils {
 
         Optional.ofNullable(element).orElseThrow(() -> new GenericExceptions("Unable to find the element for <b>" + labelName+"</b>"));
 
-        element.clear();
         String existingData=getTextBoxAttribute(by,labelName);
+
+        if(!(existingData.isEmpty() || existingData.isBlank()))
+        element.clear();
+
         if(!(existingData.isEmpty() || existingData.isBlank()))
         {
             for(int i=0;i<existingData.length();i++)

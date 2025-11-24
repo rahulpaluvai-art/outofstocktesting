@@ -68,6 +68,7 @@ public class Hook {
                         testUtil.setActions(new Actions(testUtil.getDriver()));
                         testUtil.setSeleniumUtils(new SeleniumUtils(testUtil.getDriver(), testUtil.getElementUtils(), testUtil.getReports(), testUtil.getJsFunctions(),testUtil.getActions()));
                         testUtil.setScenarioName(getScenarioName(sc));
+                        testUtil.setWaitManager(WaitManager.builder().driver(testUtil.getDriver()).build());
                     }
                     return testUtil;  // Return the already initialized or reinitialized testUtil
                 })
@@ -84,6 +85,7 @@ public class Hook {
                     testUtil.setSqlActions(new SQLActions());
                     testUtil.setScenarioName(getScenarioName(sc));
                     testUtil.setSqlActions(new SQLActions());
+                    testUtil.setWaitManager(WaitManager.builder().driver(testUtil.getDriver()).build());
 
                     if (testUtil.getPropertiesUtil().getConsolidatedOrIndividualReport().equalsIgnoreCase("Consolidated")) {
                         testUtil.setExtentReports(new ExtentReportUtil().getExtentReports("Consolidated"));
